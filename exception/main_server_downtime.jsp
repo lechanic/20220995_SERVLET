@@ -11,7 +11,7 @@
     <body>
         <div class="jumbotron">
             <div class="text-center">
-                <img src="image\ServerDown.png" class="card-img" alt="banner_image">
+                <img src="../image/ServerDown.png" class="card-img" alt="banner_image">
             </div>
             <!--div class="container">
                 <h1 class="display-3">상품 정보 에러!! 홈페이지 관리자에게 문의해 주세요.</h1>

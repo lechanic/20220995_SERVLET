@@ -22,7 +22,7 @@ ArrayList<Product> listOfProducts = dao.getAllProducts(); // 리스트에 상품
         <%for (int i = 0; i < listOfProducts.size(); i++) {Product product = listOfProducts.get(i);%>
         <div class="col-md-4">
             <div class="card bg-dark text-dark">
-                <img src="../image/product/<%=product.getFilename()%>.jpg" class="card-img" alt="...">
+                <img src="../image/product/<%=product.getFilename()%>" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title">상품 이미지 샘플</h5>
                     <p class="card-text">출처 : 구글 검색</p>
