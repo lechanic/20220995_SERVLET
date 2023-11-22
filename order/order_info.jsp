@@ -1,5 +1,4 @@
 <%@ page contentType = "text/html;charset=utf-8" %>
-
 <html>
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -17,7 +16,7 @@
             </div>
         </div>
         <div class="container">
-            <form action="order_info_process.jsp" class="form-horizontal" method="post">
+            <form name="form_order" class="form-horizontal" method="post">
                 <input type="hidden" name="cartId" value="<%=request.getParameter("cartId")%>" />
                 <div class="form-group row">
                     <label class="col-sm-2">성명</label>
@@ -28,7 +27,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2">배송일</label>
                     <div class="col-sm-3">
-                        <input name="shippingDate" id="checkordertime"type="date" class="form-control" onclick ="Checkordertime()"/>(yyyy/mm/dd)
+                        <input name="shippingDate" id="shippingDate" type="date" class="form-control"/>(yyyy/mm/dd)
                     </div>
                 </div>
                 <div class="form-group row">
@@ -130,7 +129,7 @@
                 <div class="form-group row">
                     <div class="col-sm-offset-2 col-sm-10 ">
                         <a href="../cart/product_cart.jsp?cartId=<%=request.getParameter("cartId")%>" class="btn btn-secondary" role="button"> 이전 </a> 
-                        <input type="submit" class="btn btn-primary" value="등록" onclick ="Checkordertime()">
+                        <input type="button" class="btn btn-primary" value="등록" onclick ="Checkordertime()">
                         <a href="order_cancelled.jsp" class="btn btn-secondary" role="button"> 취소 </a>
                     </div>
                 </div>

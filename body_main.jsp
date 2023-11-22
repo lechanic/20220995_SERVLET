@@ -8,14 +8,13 @@
 <%! String greeting = "현재 페이지는 VGA 그래픽 카드 상품 목록입니다."; String tagline = "하단 페이지 : 확인";%>
 <div class="container">
     <div class="jumbotron">
-		<div class="container">
-			<h3 class="display-4">
-				<%=greeting%>
+        <div class="container">
+            <h3 class="display-4">
+                <%=greeting%>
             </h3>
         </div>
     </div>
 </div>
-<%ArrayList<Product> listOfProducts = productDAO.getAllProducts(); // 리스트에 상품 전체 정보를 얻어온다.%> 
 <div class="container">
     <div class="row" align="center">
         <%
