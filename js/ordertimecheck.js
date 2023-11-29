@@ -1,14 +1,13 @@
-function Checkordertime()
+function checkordertime()
 {
-    let form=document.querySelector("#form_order");
-    let dateControl = document.querySelector("#shippingDate");
-    form.action="order_info_process.jsp";
-    if(dateControl<=new Date())
-    {
-         alert();   
+    var ordertime=document.getElementById("shippingDate");
+    var today=new Date();
+    if(ordertime.getdate()-today.getDate()<1){
+        alert("배송 불가");
+        return false;
     }
-    else
-    {
-        form.submit();
+    else{
+        alert("배송 가능");
+        return true;
     }
 }

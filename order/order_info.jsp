@@ -5,7 +5,15 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script type ="text/javascript" src ="../js/ordertimecheck.js"></script>
+        <script type ="text/javascript">
+            window.onload = function() {
+                today = new Date();
+                tomorrow=new Date(today.setDate(today.getDate()+1)).toISOString().split("T")[0];
+                console.log(tomorrow);
+                bir = document.getElementById("shippingDate");
+                bir.min = tomorrow;
+            }
+        </script>
         <title>배송 정보</title>
     </head>
     <body>
@@ -16,7 +24,7 @@
             </div>
         </div>
         <div class="container">
-            <form name="form_order" class="form-horizontal" method="post">
+            <form name="form_order" action="order_info_process.jsp"class="form-horizontal" method="post">
                 <input type="hidden" name="cartId" value="<%=request.getParameter("cartId")%>" />
                 <div class="form-group row">
                     <label class="col-sm-2">성명</label>
@@ -27,7 +35,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2">배송일</label>
                     <div class="col-sm-3">
-                        <input name="shippingDate" id="shippingDate" type="date" class="form-control"/>(yyyy/mm/dd)
+                        <input name="shippingDate" id="shippingDate" type="date" class="form-control">(yyyy/mm/dd)
                     </div>
                 </div>
                 <div class="form-group row">
@@ -129,7 +137,7 @@
                 <div class="form-group row">
                     <div class="col-sm-offset-2 col-sm-10 ">
                         <a href="../cart/product_cart.jsp?cartId=<%=request.getParameter("cartId")%>" class="btn btn-secondary" role="button"> 이전 </a> 
-                        <input type="button" class="btn btn-primary" value="등록" onclick ="Checkordertime()">
+                        <input type="submit" class="btn btn-primary" value="등록">
                         <a href="order_cancelled.jsp" class="btn btn-secondary" role="button"> 취소 </a>
                     </div>
                 </div>
